@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import ScoopOption from "./ScoopOption";
+import ToppingOption from "./ToppingOption";
 
 export default function Option({ optionType }) {
   const [item, setItem] = useState([]);
@@ -14,7 +15,7 @@ export default function Option({ optionType }) {
       });
   }, [optionType]);
 
-  const ItemComponent = optionType === "scoops" ? ScoopOption : null;
+  const ItemComponent = optionType === "scoops" ? ScoopOption : ToppingOption;
 
   const optionItem = item.map((item) => (
     <ItemComponent
