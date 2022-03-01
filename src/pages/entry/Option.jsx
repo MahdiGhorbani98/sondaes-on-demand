@@ -2,16 +2,18 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import ScoopOption from "./ScoopOption";
 import ToppingOption from "./ToppingOption";
+import Alert from "../common/Alert";
 
 export default function Option({ optionType }) {
   const [item, setItem] = useState([]);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     axios
       .get(`http://localhost:3030/${optionType}`)
       .then((res) => setItem(res.data))
       .catch((err) => {
-        //Handle Error
+        setError(true);
       });
   }, [optionType]);
 
@@ -25,5 +27,8 @@ export default function Option({ optionType }) {
     />
   ));
 
+  if (error) {
+    return <Alert />;
+  }
   return <div>{optionItem}</div>;
 }
