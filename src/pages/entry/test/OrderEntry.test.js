@@ -1,7 +1,12 @@
-import { screen, render, waitFor } from "@testing-library/react";
+import {
+  screen,
+  render,
+  waitFor,
+} from "../../../test-utils/testing-library-utils";
 import OrederEntry from "../OrederEntry";
 import { server } from "../../../mocks/server";
 import { rest } from "msw";
+import { OrderDetailsProvider } from "../../../contexts/OrderDetails";
 
 test("handle error for topping and scoop", async () => {
   server.resetHandlers(
