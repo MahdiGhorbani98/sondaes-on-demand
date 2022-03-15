@@ -4,7 +4,7 @@ export default function OrederEntry() {
   return (
     <div>
       <Option optionType="scoops" />
-      <Option optionType="topping" />
+      <Option optionType="toppings" />
     </div>
   );
 }

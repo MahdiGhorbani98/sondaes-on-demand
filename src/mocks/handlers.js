@@ -13,16 +13,16 @@ export const handlers = [
     return res(
       ctx.json([
         {
+          name: "Cherries",
+          imagePath: "/images/cherries.png",
+        },
+        {
           name: "M&Ms",
           imagePath: "/images/m-and-ms.png",
         },
         {
           name: "Hot fudge",
           imagePath: "/images/hot-fudge.png",
-        },
-        {
-          name: "Peanut butter cups",
-          imagePath: "/images/peanut-butter-cups.png",
         },
       ])
     );
